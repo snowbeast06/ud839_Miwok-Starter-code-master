@@ -30,7 +30,7 @@ public class PhrasesActivity extends AppCompatActivity {
 
 
         // create a wordadapter whose data source is the arraylist of type Word
-        WordAdapter adapter = new WordAdapter(this, words);
+        WordAdapter adapter = new WordAdapter(this, words, R.color.category_phrases);
 
         // get a reference to the listview and add the adapter to the listview
         ListView listView = (ListView) findViewById(R.id.list);

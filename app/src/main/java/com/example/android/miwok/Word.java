@@ -10,6 +10,7 @@ public class Word {
     private String mMiwokTranslation;
     private String mDefaultTranslation;
     private int mDrawableImageResourceID;
+    private int mRawAudioResourceID;
 
     // constructor
     public Word(String defaultTranslation, String miwokTranslation) {
@@ -18,12 +19,21 @@ public class Word {
         // we'll leave the resourceID as 0 in this case
     }
 
+
+    // constructor with image
     public Word(String defaultTranslation, String miwokTranslation, int imageResourceID) {
         mMiwokTranslation = miwokTranslation;
         mDefaultTranslation = defaultTranslation;
         mDrawableImageResourceID = imageResourceID;
     }
 
+    // constructor with image and audio file
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceID, int audioResourceID) {
+        mMiwokTranslation = miwokTranslation;
+        mDefaultTranslation = defaultTranslation;
+        mDrawableImageResourceID = imageResourceID;
+        mRawAudioResourceID = audioResourceID;
+    }
 
     //Getters
     public String getMiwokTranslation() {
@@ -38,8 +48,24 @@ public class Word {
         return mDrawableImageResourceID;
     }
 
+    public int getRawAudioResourceID() {
+        return mRawAudioResourceID;
+    }
+
+
     public boolean hasImage() {
         return (mDrawableImageResourceID != NO_IMAGE_ASSIGNED);
     }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mDrawableImageResourceID=" + mDrawableImageResourceID +
+                ", mRawAudioResourceID=" + mRawAudioResourceID +
+                '}';
+    }
+
 
 }
